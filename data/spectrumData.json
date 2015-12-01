@@ -1,0 +1,678 @@
+{
+id: "1",
+lowerBand: "225",
+upperBand: "235",
+bandDesc: "This band is allocated for exclusive Federal Government use. Operation of unlicensed Part 15 Devices is permitted between 225 and 235 MHz."
+},
+{
+id: "2",
+lowerBand: "235",
+upperBand: "267",
+bandDesc: "This band is allocated for exclusive Federal Government use. Operation of unlicensed Part 15 Devices is permitted between 235 and 240 MHz."
+},
+{
+id: "3",
+lowerBand: "267",
+upperBand: "322",
+bandDesc: "This band is allocated for exclusive Federal Government use. Operation of unlicensed Part 15 Devices is permitted between 285 and 322 MHz."
+},
+{
+id: "4",
+lowerBand: "322",
+upperBand: "328.6",
+bandDesc: "This band is allocated for exclusive Federal Government use."
+},
+{
+id: "5",
+lowerBand: "328.6",
+upperBand: "335.4",
+bandDesc: "This band is used in the Aviation Service. This band is allocated for both Federal and Non-Federal use."
+},
+{
+id: "6",
+lowerBand: "335.4",
+upperBand: "399.9",
+bandDesc: "This band is allocated for exclusive Federal Government use. Operation of unlicensed Part 15 Devices is permitted between 335.4 and 399.9 MHz."
+},
+{
+id: "7",
+lowerBand: "399.9",
+upperBand: "400.05",
+bandDesc: "This band is used in the Mobile Satellite Service (MSS) and Radionavigation Satellite Service. This band is allocated for both Federal and Non-Federal use."
+},
+{
+id: "8",
+lowerBand: "400.05",
+upperBand: "400.15",
+bandDesc: "This band is allocated for the Standard Frequency and Time Signal-Satellite Service. This band is allocated for both Federal and Non-Federal use."
+},
+{
+id: "9",
+lowerBand: "400.15",
+upperBand: "401",
+bandDesc: "This band is used in the Non Voice, Non Geostationary (NVNG) Mobile Satellite Service (MSS) and the Space Operation Service. This band is allocated for both Federal and Non-Federal use."
+},
+{
+id: "10",
+lowerBand: "401",
+upperBand: "402",
+bandDesc: "This band is used in the Earth Exploration Satellite Service, the Medical Device Radiocommunication Service, and the Space Operation Service. This band is allocated for both Federal and Non-Federal use."
+},
+{
+id: "11",
+lowerBand: "402",
+upperBand: "403",
+bandDesc: "This band is used in the Earth Exploration Satellite Service and the Medical Device Radiocommunication Service. This band is allocated for both Federal and Non-Federal use."
+},
+{
+id: "12",
+lowerBand: "403",
+upperBand: "406",
+bandDesc: "This band is used in the Medical Device Radiocommunication Service. This band is allocated for both Federal and Non-Federal use."
+},
+{
+id: "13",
+lowerBand: "406",
+upperBand: "406.1",
+bandDesc: "This band is used in the Aviation Service, the Maritime Service, and the Personal Locator Beacons Service. This band is allocated for both Federal and Non-Federal use."
+},
+{
+id: "14",
+lowerBand: "406.1",
+upperBand: "410",
+bandDesc: "This band is used in the Industrial/Business Radio Service. This band is allocated for both Federal and Non-Federal use."
+},
+{
+id: "15",
+lowerBand: "410",
+upperBand: "420",
+bandDesc: "This band is used in the Industrial/Business Radio Service. This band is allocated for both Federal and Non-Federal use. Operation of unlicensed Part 15 Devices is permitted between 410 and 420 MHz."
+},
+{
+id: "16",
+lowerBand: "420",
+upperBand: "450",
+bandDesc: "This band is used in the Amateur Radio Service, the Industrial/Business Radio Service, the Public Safety Radio Service and the Radiolocation Service. This band is allocated for both Federal and Non-Federal use. Operation of unlicensed Part 15 Devices is permitted between 420 and 450 MHz."
+},
+{
+id: "17",
+lowerBand: "450",
+upperBand: "454",
+bandDesc: "This band is used in the Industrial/Business Radio Service, the Low Power Auxiliary Service, the Public Safety Radio Service, and the Remote Pickup Service. Operation of unlicensed Part 15 Devices is permitted between 450 and 454 MHz."
+},
+{
+id: "18",
+lowerBand: "454",
+upperBand: "456",
+bandDesc: "This band is used in the General Aviation Air-Ground Service, the Low Power Auxiliary Service, the Maritime Service, the Paging and Radiotelephone Service, the Remote Pickup Service, and the Rural Radiotelephone Service (including the Basic Exchange Telephone Radio Systems (BETRS)). Operation of unlicensed Part 15 Devices is permitted between 454 and 456 MHz."
+},
+{
+id: "20",
+lowerBand: "456",
+upperBand: "460",
+bandDesc: "This band is used in the Industrial/Business Radio Service, the General Aviation Air-Ground Service, the Maritime Service, the Paging and Radiotelephone Service, the Public Safety Radio Service, and the Rural Radiotelephone Service (including the Basic Exchange Telephone Radio Systems (BETRS)). Operation of unlicensed Part 15 Devices is permitted between 456 and 460 MHz."
+},
+{
+id: "21",
+lowerBand: "460",
+upperBand: "462.5375",
+bandDesc: "This band is used in the Industrial/Business Radio Service and the Public Safety Radio Service. This band is allocated for both Federal and Non-Federal use. Operation of unlicensed Part 15 Devices is permitted between 460 and 462.5375 MHz."
+},
+{
+id: "22",
+lowerBand: "462.5375",
+upperBand: "462.7375",
+bandDesc: "This band is used in the Family Radio Service (FRS) and the General Mobile Radio Service (GMRS). This band is allocated for both Federal and Non-Federal use. Operation of unlicensed Part 15 Devices is permitted between 462.5375 and 462.7375 MHz."
+},
+{
+id: "23",
+lowerBand: "462.7375",
+upperBand: "467.5375",
+bandDesc: "This band is used in the Industrial/Business Radio Service and the Public Safety Radio Service. This band is allocated for both Federal and Non-Federal use. Operation of unlicensed Part 15 Devices is permitted between 462.7375 and 467.5375 MHz."
+},
+{
+id: "24",
+lowerBand: "467.5375",
+upperBand: "467.7375",
+bandDesc: "This band is used in the Family Radio Service (FRS) and the General Mobile Radio Service (GMRS). This band is allocated for both Federal and Non-Federal use. Operation of unlicensed Part 15 Devices is permitted between 467.5375 and 467.7375 MHz."
+},
+{
+id: "25",
+lowerBand: "467.7375",
+upperBand: "470",
+bandDesc: "This band is used in the Industrial/Business Radio Service and the Public Safety Radio Service. This band is allocated for both Federal and Non-Federal use. Operation of unlicensed Part 15 Devices is permitted between 467.7375 and 470 MHz."
+},
+{
+id: "26",
+lowerBand: "470",
+upperBand: "512",
+bandDesc: "This band is used in the Broadcast Television Service, the Industrial/Business Radio Service, the Low Power Auxiliary Service, the Low Power Television (LPTV) Service (including TV Translator, TV Booster, and Class A Stations), the Offshore Radiotelephone Service, and the Public Safety Radio Service. Operation of unlicensed Part 15 Devices is permitted between 470 and 512 MHz."
+},
+{
+id: "27",
+lowerBand: "512",
+upperBand: "608",
+bandDesc: "This band is used in the Broadcast Television Service, the Low Power Auxiliary Service, and the Low Power Television (LPTV) Service (including TV Translator, TV Booster, and Class A Stations). Operation of unlicensed Part 15 Devices is permitted between 512 and 608 MHz."
+},
+{
+id: "28",
+lowerBand: "608",
+upperBand: "614",
+bandDesc: "This band is used in the Wireless Medical Telemetry Service (WMTS) and the Radioastronomy Service. This band is allocated for both Federal and Non-Federal use."
+},
+{
+id: "29",
+lowerBand: "614",
+upperBand: "698",
+bandDesc: "This band is used in the Broadcast Television Service, the Low Power Auxiliary Service, and the Low Power Television (LPTV) Service (including TV Translator, TV Booster, and Class A Stations). Operation of unlicensed Part 15 Devices is permitted between 614 and 698 MHz."
+},
+{
+id: "30",
+lowerBand: "698",
+upperBand: "763",
+bandDesc: "This band is used in the 700 MHz Service, the Low Power Auxiliary Service, and the Low Power Television (LPTV) Service (including TV Translator, TV Booster, and Class A Stations). Operation of unlicensed Part 15 devices is permitted between 698 and 763 MHz."
+},
+{
+id: "31",
+lowerBand: "763",
+upperBand: "775",
+bandDesc: "This band is used in the Low Power Auxiliary Service, the Low Power Television (LPTV) Service (including TV Translator, TV Booster, and Class A Stations), and the Public Safety Service. Operation of unlicensed Part 15 devices is permitted between 763 and 775 MHz."
+},
+{
+id: "32",
+lowerBand: "775",
+upperBand: "793",
+bandDesc: "This band is used in the 700 MHz Service, the Low Power Auxiliary Service, and the Low Power Television (LPTV) Service (including TV Translator, TV Booster, and Class A Stations). Operation of unlicensed Part 15 devices is permitted between 775 and 793 MHz."
+},
+{
+id: "33",
+lowerBand: "793",
+upperBand: "805",
+bandDesc: "This band is used in the Low Power Auxiliary Service, the Low Power Television (LPTV) Service (including TV Translator, TV Booster, and Class A Stations), and the Public Safety Service. Operation of unlicensed Part 15 devices is permitted between 793 and 805 MHz."
+},
+{
+id: "34",
+lowerBand: "805",
+upperBand: "806",
+bandDesc: "This band is used in the 700 MHz Band Service, the Low Power Auxiliary Service, and the Low Power Television (LPTV) Service (including TV Translator, TV Booster, and Class A Stations). Operation of unlicensed Part 15 Devices is permitted between 805 and 806 MHz."
+},
+{
+id: "35",
+lowerBand: "806",
+upperBand: "809",
+bandDesc: "This band is used in the Public Safety Radio Service. Operation of unlicensed Part 15 Devices is permitted between 806 and 809 MHz."
+},
+{
+id: "36",
+lowerBand: "809",
+upperBand: "849",
+bandDesc: "This band is used in the Business/Industrial Land Transportation Service, the Cellular Radiotelephone Service, the Public Safety Radio Service, and the Specialized Mobile Radio (SMR) Service. Operation of unlicensed Part 15 Devices is permitted between 809 and 849 MHz."
+},
+{
+id: "37",
+lowerBand: "849",
+upperBand: "851",
+bandDesc: "This band is used in the Commercial Air-Ground Radiotelephone Service. Operation of unlicensed Part 15 Devices is permitted between 849 and 851 MHz."
+},
+{
+id: "38",
+lowerBand: "851",
+upperBand: "854",
+bandDesc: "This band is used in the Public Safety Radio Service. Operation of unlicensed Part 15 Devices is permitted is permitted between 851 and 854 MHz."
+},
+{
+id: "39",
+lowerBand: "854",
+upperBand: "894",
+bandDesc: "This band is used in the Business/Industrial Land Transportation Service, the Cellular Radiotelephone Service, the Public Safety Radio Service, and the Specialized Mobile Radio (SMR) Service. Operation of unlicensed Part 15 Devices is permitted between 854 and 894 MHz."
+},
+{
+id: "40",
+lowerBand: "894",
+upperBand: "896",
+bandDesc: "This band is used in the Commercial Air-Ground Radiotelephone Service. Operation of unlicensed Part 15 Devices is permitted is permitted between 894 and 896 MHz."
+},
+{
+id: "41",
+lowerBand: "896",
+upperBand: "901",
+bandDesc: "This band is used in the Business/Industrial Land Transportation Service, and the Specialized Mobile Radio (SMR) Service. Operation of unlicensed Part 15 Devices is permitted between 896 and 901 MHz."
+},
+{
+id: "42",
+lowerBand: "901",
+upperBand: "902",
+bandDesc: "This band is used in the Narrowband Personal Communications Service (PCS). Operation of unlicensed Part 15 Devices is permitted between 901 and 902 MHz."
+},
+{
+id: "43",
+lowerBand: "902",
+upperBand: "928",
+bandDesc: "This band is used in the Amateur Radio Service and the Location and Monitoring Service (LMS). Operation of unlicensed Part 15 Devices is permitted between 902 and 928 MHz."
+},
+{
+id: "44",
+lowerBand: "928",
+upperBand: "929",
+bandDesc: "This band is used in the Multiple Address Service (MAS). Operation of unlicensed Part 15 Devices is permitted between 928 and 929 MHz."
+},
+{
+id: "45",
+lowerBand: "929",
+upperBand: "930",
+bandDesc: "This band is used in the Paging and Radiotelephone Service. Operation of unlicensed Part 15 Devices is permitted between 929 and 930 MHz."
+},
+{
+id: "46",
+lowerBand: "930",
+upperBand: "931",
+bandDesc: "This band is used in the Narrowband Personal Communications Service (PCS). Operation of unlicensed Part 15 Devices is permittedbetween 930 and 931 MHz."
+},
+{
+id: "47",
+lowerBand: "931",
+upperBand: "932",
+bandDesc: "This band is used in the Paging and Radiotelephone Service. Operation of unlicensed Part 15 Devices is permitted between 931 and 932 MHz."
+},
+{
+id: "48",
+lowerBand: "932",
+upperBand: "935",
+bandDesc: "This band is used in the Fixed Microwave Service, and the Multiple Address Service (MAS). This band is allocated for both Federal and Non-Federal use. Operation of unlicensed Part 15 Devices is permitted between 932 and 935 MHz."
+},
+{
+id: "49",
+lowerBand: "935",
+upperBand: "940",
+bandDesc: "This band is used in the Business/Industrial Land Transportation Service, and the Specialized Mobile Radio (SMR) Service. Operation of unlicensed Part 15 Devices is permitted between 935 and 940 MHz."
+},
+{
+id: "50",
+lowerBand: "940",
+upperBand: "941",
+bandDesc: "This band is used in the Narrowband Personal Communications Service (PCS). Operation of unlicensed Part 15 Devices is permitted between 940 and 941 MHz."
+},
+{
+id: "51",
+lowerBand: "941",
+upperBand: "944",
+bandDesc: "This band is used in the Aural Broadcast Auxiliary Service, the Fixed Microwave Service, and the Multiple Address Service (MAS). This band is allocated for both Federal and Non-Federal use. Operation of unlicensed Part 15 Devices is permitted between 941 and 944 MHz."
+},
+{
+id: "52",
+lowerBand: "944",
+upperBand: "960",
+bandDesc: "This band is used in the Aural Broadcast Auxiliary Service, the Fixed Microwave Service, the Low Power Auxiliary Service, and the Multiple Address Service (MAS). Operation of unlicensed Part 15 Devices is permitted between 944 and 960 MHz."
+},
+{
+id: "53",
+lowerBand: "960",
+upperBand: "1164",
+bandDesc: "This band is used in the Aviation Service. This band is allocated for both Federal and Non-Federal use."
+},
+{
+id: "54",
+lowerBand: "1164",
+upperBand: "1215",
+bandDesc: "This band is used in the Radionavigation Satellite Service. This band is allocated for both Federal and Non-Federal use."
+},
+{
+id: "55",
+lowerBand: "1215",
+upperBand: "1240",
+bandDesc: "This band is allocated for Primary Federal Government use. Non-Federal use is only on a secondary basis."
+},
+{
+id: "56",
+lowerBand: "1240",
+upperBand: "1300",
+bandDesc: "This band is used in the Amateur Radio Service. This band is allocated for both Federal and Non-Federal use. Operation of unlicensed Part 15 Devices is permitted between 1240 and 1300 MHz."
+},
+{
+id: "57",
+lowerBand: "1300",
+upperBand: "1350",
+bandDesc: "This band is used in the Aviation Service. This band is allocated for both Federal and Non-Federal use."
+},
+{
+id: "58",
+lowerBand: "1350",
+upperBand: "1390",
+bandDesc: "This band is allocated for exclusive Federal Government use."
+},
+{
+id: "59",
+lowerBand: "1390",
+upperBand: "1392",
+bandDesc: "This band is used in the 1390 - 1392 MHz Band Service."
+},
+{
+id: "60",
+lowerBand: "1392",
+upperBand: "1395",
+bandDesc: "This band is used in the 1392 - 1395 MHz Band Service."
+},
+{
+id: "61",
+lowerBand: "1395",
+upperBand: "1400",
+bandDesc: "This band is used in the Wireless Medical Telemetry Service (WMTS). This band is allocated for both Federal and Non-Federal use."
+},
+{
+id: "62",
+lowerBand: "1400",
+upperBand: "1427",
+bandDesc: "This band is used in the Earth Exploration-Satellite, Radio Astronomy, and Space Research Services. This band is allocated for both Federal and Non-Federal use. This is a receive-only band; transmitting is not permitted."
+},
+{
+id: "63",
+lowerBand: "1427",
+upperBand: "1429.5",
+bandDesc: "This band is used in the Industrial/Business Radio Service, and the Public Safety Radio Service. This band is set allocated for both Federal and Non-Federal use. Operation of unlicensed Part 15 Devices is permitted between 1427 and 1429.5 MHz."
+},
+{
+id: "64",
+lowerBand: "1429.5",
+upperBand: "1430",
+bandDesc: "This band is used in the Industrial/Business Radio Service, the Public Safety Radio Service, and the Wireless Medical Telemetry Service (WMTS). Operation of unlicensed Part 15 Devices is permitted between 1429.5 and 1430 MHz."
+},
+{
+id: "65",
+lowerBand: "1430",
+upperBand: "1432",
+bandDesc: "This band is used in the Industrial/Business Radio Service, the Public Safety Radio Service, and the Wireless Medical Telemetry Service (WMTS). Operation of unlicensed Part 15 Devices is permitted between 1430 and 1432 MHz."
+},
+{
+id: "66",
+lowerBand: "1432",
+upperBand: "1435",
+bandDesc: "This band is used in the 1432 - 1435 MHz Band Service. Operation of unlicensed Part 15 Devices is permitted between 1432 and 1435 MHz."
+},
+{
+id: "67",
+lowerBand: "1435",
+upperBand: "1525",
+bandDesc: "This band is used in the Aviation Service. This band is allocated for both Federal and Non-Federal use."
+},
+{
+id: "68",
+lowerBand: "1525",
+upperBand: "1535",
+bandDesc: "This band is used in the Aviation Service, and the Mobile Satellite Service (MSS). This band is allocated for both Federal and Non-Federal use."
+},
+{
+id: "69",
+lowerBand: "1535",
+upperBand: "1559",
+bandDesc: "This band is used in the Mobile Satellite Service (MSS). This band is allocated for both Federal and Non-Federal use."
+},
+{
+id: "70",
+lowerBand: "1559",
+upperBand: "1610",
+bandDesc: "This band is used in the Radionavigation Satellite Service. This band is allocated for both Federal and Non-Federal use."
+},
+{
+id: "71",
+lowerBand: "1610",
+upperBand: "1610.6",
+bandDesc: "This band is used in the Aviation Service, and the Mobile Satellite Service (MSS). This band is allocated for both Federal and Non-Federal use."
+},
+{
+id: "72",
+lowerBand: "1610.6",
+upperBand: "1613.8",
+bandDesc: "This band is used in the Mobile Satellite Service (MSS). This band is allocated for both Federal and Non-Federal use."
+},
+{
+id: "73",
+lowerBand: "1613.8",
+upperBand: "1626.5",
+bandDesc: "This band is used in the Mobile Satellite Service (MSS). This band is allocated for both Federal and Non-Federal use."
+},
+{
+id: "74",
+lowerBand: "1626.5",
+upperBand: "1660",
+bandDesc: "This band is used in the Mobile Satellite Service (MSS). This band is allocated for both Federal and Non-Federal use. Operation of unlicensed Part 15 Devices is permitted between 1626.5 and 1645.5 MHz and between 1646.5 and 1660 MHz."
+},
+{
+id: "75",
+lowerBand: "1660",
+upperBand: "1660.5",
+bandDesc: "This band is used in the Mobile Satellite Service (MSS). This band is allocated for both Federal and Non-Federal use."
+},
+{
+id: "76",
+lowerBand: "1660.5",
+upperBand: "1668.4",
+bandDesc: "This band is used in the Radio Astronomy and Space Research Services. This band is allocated for both Federal ad Non-Federal use. This is a receive-only band; transmitting is not permitted."
+},
+{
+id: "77",
+lowerBand: "1668.4",
+upperBand: "1670",
+bandDesc: "This band is used in the Meteorological Aids and Radio Astronomy Radio Services. This band is allocated for both Federal and Non-Federal use."
+},
+{
+id: "78",
+lowerBand: "1670",
+upperBand: "1675",
+bandDesc: "This band is used in the 1670 - 1675 MHz Band Service."
+},
+{
+id: "79",
+lowerBand: "1675",
+upperBand: "1700",
+bandDesc: "This band is used in the Meteorological Aids and Meteorological-Satellite Services. This band is allocated for both Federal and Non-Federal use."
+},
+{
+id: "80",
+lowerBand: "1700",
+upperBand: "1710",
+bandDesc: "This band is used in the Meteorological Aids and Fixed Services. This band is allocated for both Federal and Non-Federal use."
+},
+{
+id: "81",
+lowerBand: "1710",
+upperBand: "1755",
+bandDesc: "This band is used in the Advanced Wireless Service (AWS - 1). Operation of unlicensed Part 15 Devices is permitted between 1710 and 1718.8 MHz and between 1722.2 and 1755 MHz."
+},
+{
+id: "82",
+lowerBand: "1755",
+upperBand: "1850",
+bandDesc: "This band is allocated for exclusive Federal Government use. Operation of unlicensed Part 15 Devices is permitted between 1755 and 1850 MHz."
+},
+{
+id: "83",
+lowerBand: "1850",
+upperBand: "2000",
+bandDesc: "This band is used in the Advanced Wireless Service (AWS - 2), the Broadband Personal Communications Service (PCS), the Cable Antenna Relay Service, the Fixed Microwave Service, the Local Television Transmission Service , and the TV Broadcast Auxiliary Service. Operation of unlicensed Part 15 Devices is permitted between 1850 and 2000 MHz."
+},
+{
+id: "84",
+lowerBand: "2000",
+upperBand: "2020",
+bandDesc: "This band is used in the Cable Antenna Relay Service, the Local Television Transmission Service, the Mobile Satellite Service (MSS), and the TV Broadcast Auxiliary Service. Operation of unlicensed Part 15 Devices is permitted between 2000 and 2020 MHz."
+},
+{
+id: "85",
+lowerBand: "2020",
+upperBand: "2025",
+bandDesc: "This band is used in the Advanced Wireless Service (AWS - 2), the Cable Antenna Relay Service, the Local Television Transmission Service , and the TV Broadcast Auxiliary Service. Operation of unlicensed Part 15 Devices is permitted between 2020 and 2025 MHz."
+},
+{
+id: "86",
+lowerBand: "2025",
+upperBand: "2110",
+bandDesc: "This band is used in the Cable Antenna Relay Service, the Earth Exploration Satellite Service, the Local Television Transmission Service, the Space Operation Service, and the TV Broadcast Auxiliary Service. This band is set allocated for both Federal and Non-Federal use. Operation of unlicensed Part 15 Devices is permitted between 2025 and 2110 MHz."
+},
+{
+id: "87",
+lowerBand: "2110",
+upperBand: "2120",
+bandDesc: "This band is used in the Advanced Wireless Service (AWS - 1) and the Fixed Microwave Service. Operation of unlicensed Part 15 Devices is permitted between 2110 and 2120 MHz."
+},
+{
+id: "88",
+lowerBand: "2120",
+upperBand: "2180",
+bandDesc: "This band is used in the Advanced Wireless Service (AWS - 1 and AWS - 2) and the Fixed Microwave Service. Operation of unlicensed Part 15 Devices is permitted between 2120 and 2180 MHz."
+},
+{
+id: "89",
+lowerBand: "2180",
+upperBand: "2200",
+bandDesc: "This band is used in the Fixed Microwave Service and the Mobile Satellite Service (MSS). Operation of unlicensed Part 15 Devices is permitted between 2180 and 2200 MHz."
+},
+{
+id: "90",
+lowerBand: "2200",
+upperBand: "2290",
+bandDesc: "This band is allocated for Primary Federal Government use. Non-Federal use is only on a secondary basis."
+},
+{
+id: "91",
+lowerBand: "2290",
+upperBand: "2300",
+bandDesc: "This band is used in the Space Research Service. The band is allocated for both Federal and Non-Federal use."
+},
+{
+id: "92",
+lowerBand: "2300",
+upperBand: "2305",
+bandDesc: "This band is used in the Amateur Radio Service. Operation of unlicensed Part 15 Devices is permitted between 2300 and 2305 MHz."
+},
+{
+id: "93",
+lowerBand: "2305",
+upperBand: "2310",
+bandDesc: "This band is used in the Amateur Radio Service and the Wireless Communications Service (WCS). Operation of unlicensed Part 15 Devices is permitted between 2305 and 2310 MHz."
+},
+{
+id: "94",
+lowerBand: "2310",
+upperBand: "2320",
+bandDesc: "This band is used in the Aviation Service and the Wireless Communications Service (WCS). This band is allocated for both Federal and Non-Federal use."
+},
+{
+id: "95",
+lowerBand: "2320",
+upperBand: "2345",
+bandDesc: "This band is used in the Satellite Digital Audio Radio Service (SDARS). This band is allocated for both Federal and Non-Federal use."
+},
+{
+id: "96",
+lowerBand: "2345",
+upperBand: "2360",
+bandDesc: "This band is used in the Aviation Service and the Wireless Communications Service (WCS). This band is allocated for both Federal and Non-Federal use."
+},
+{
+id: "97",
+lowerBand: "2360",
+upperBand: "2390",
+bandDesc: "This band is used in the Aviation Service. This band is allocated for both Federal and Non-Federal use."
+},
+{
+id: "98",
+lowerBand: "2390",
+upperBand: "2395",
+bandDesc: "This band is used in the Amateur Radio Service and the Aviation Service. This band is allocated for both Federal and Non-Federal use. Operation of unlicensed Part 15 Devices is permitted between 2390 and 2395 MHz."
+},
+{
+id: "99",
+lowerBand: "2395",
+upperBand: "2400",
+bandDesc: "This band is used in the Amateur Radio Service. Operation of unlicensed Part 15 Devices is permitted between 2395 and 2400 MHz."
+},
+{
+id: "100",
+lowerBand: "2400",
+upperBand: "2417",
+bandDesc: "This band is used in the Amateur Radio Service. Operation of unlicensed Part 15 Devices is permitted between 2400 and 2417 MHz."
+},
+{
+id: "101",
+lowerBand: "2417",
+upperBand: "2450",
+bandDesc: "This band is used in the Amateur Radio Service. This band is allocated for both Federal and Non-Federal use. Operation of unlicensed Part 15 Devices is permitted between 2417 and 2450 MHz."
+},
+{
+id: "102",
+lowerBand: "2450",
+upperBand: "2483.5",
+bandDesc: "This band is used in the Fixed Microwave Service, the Industrial, Scientific and Medical Equipment Service (ISM), the Local Television Transmission Service, the Radiolocation Service, the Public Safety Radio Service, and the TV Broadcast Auxiliary Service. Operation of unlicensed Part 15 Devices is permitted between 2450 and 2483.5 MHz."
+},
+{
+id: "103",
+lowerBand: "2483.5",
+upperBand: "2495",
+bandDesc: "This band is used in the Mobile Satellite Service (MSS) and the TV Broadcast Auxiliary Service. This band is allocated for both Federal and Non-Federal use."
+},
+{
+id: "104",
+lowerBand: "2495",
+upperBand: "2500",
+bandDesc: "This band is used in the Broadband Radio Service (BRS), and the Mobile Satellite Service (MSS), and the TV Broadcast Auxiliary Service. This band is allocated for both Federal and Non-Federal use."
+},
+{
+id: "105",
+lowerBand: "2500",
+upperBand: "2655",
+bandDesc: "This band is used in the Broadband Radio Service (BRS) and the Educational Broadband Service (EBS). Operation of unlicensed Part 15 Devices is permitted between 2500 and 2655 MHz."
+},
+{
+id: "106",
+lowerBand: "2655",
+upperBand: "2690",
+bandDesc: "This band is used in the Broadband Radio Service (BRS) and the Educational Broadband Service (EBS). This band is allocated for both Federal and Non-Federal use. Operation of unlicensed Part 15 Devices is permitted between 2655 and 2690 MHz."
+},
+{
+id: "114",
+lowerBand: "2690",
+upperBand: "2700",
+bandDesc: "This band is used in the Earth Exploration-Satellite, Radio Astronomy, and Space Research Services. This band is allocated for both Federal and Non-Federal use. This is a receive-only band; transmitting is not permitted."
+},
+{
+id: "107",
+lowerBand: "2700",
+upperBand: "2900",
+bandDesc: "This band is used in the Aviation Service."
+},
+{
+id: "108",
+lowerBand: "2900",
+upperBand: "3100",
+bandDesc: "This band is used in the Maritime Service and the Radiolocation Service. This band is allocated for both Federal and Non-Federal use. Operation of unlicensed Part 15 Devices is permitted between 2900 and 3100 MHz."
+},
+{
+id: "109",
+lowerBand: "3100",
+upperBand: "3300",
+bandDesc: "This band is used in the Radiolocation Service. This band is allocated for both Federal and Non-Federal Use. Operation of unlicensed Part 15 Devices is permitted between 3100 and 3260 MHz and between 3267 and 3300 MHz."
+},
+{
+id: "110",
+lowerBand: "3300",
+upperBand: "3500",
+bandDesc: "This band is used in the Amateur Radio Service, the Fixed Satellite Service, and the Radiolocation Service. Operation of unlicensed Part 15 Devices is permitted between 3300 and 3322 MHz, 3339 and 3345.8 MHz, and between 3358 and 3500 MHz."
+},
+{
+id: "111",
+lowerBand: "3500",
+upperBand: "3600",
+bandDesc: "This band is used in the Fixed Satellite Service and the Radiolocation Service. This band is allocated for both Federal and Non-Federal use. Operation of unlicensed Part 15 Devices is permitted between 3500 and 3600 MHz. "
+},
+{
+id: "112",
+lowerBand: "3600",
+upperBand: "3650",
+bandDesc: "This band is used in the Fixed Satellite Service and the Radiolocation Service. This band is allocated for both Federal and Non-Federal use."
+},
+{
+id: "113",
+lowerBand: "3650",
+upperBand: "3700",
+bandDesc: "This band is used in the 3650 MHz Service and the Fixed Satellite Service."
+}

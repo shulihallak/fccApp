@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+  <title>FCC Broadband Map</title>
+
+  <link rel="stylesheet" href="stylesheet/map.css" media="screen" title="no title" charset="utf-8">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
+  <script src="https://maps.googleapis.com/maps/api/js?key=&signed_in=true&callback=initMap"
+      async defer></script>
+    <script type="text/javascript" src="js/map.js">
+    </script>
+</head>
+<body>
+
+  <div id="floating-panel">
+   <input id="address" type="textbox" value="">
+   <input id="submit" type="button" value="Geocode">
+ </div>
+     <div id="map"></div>
+
+
+</body>
+</html>
