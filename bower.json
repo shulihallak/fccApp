@@ -1,0 +1,24 @@
+{
+  "name": "fcc",
+  "homepage": "https://github.com/shulihallak/fccApp",
+  "authors": [
+    "shulihallak <shuli@invisiblenetworks.co>"
+  ],
+  "description": "",
+  "main": "",
+  "moduleType": [],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular-route": "~1.4.9",
+    "d3": "^3.5.14",
+    "angular": "~1.4.9",
+    "angular-dimple": "^2.0.1"
+  }
+}
