@@ -1,0 +1,33 @@
+
+<div class="container" ng-controller="facDetailCtrl as ctrl" style="padding-top:30px;">
+  <h4>FCC Facility Details For {{ctrl.station}}</h4>
+
+  <h5>Auth App Id: {{ctrl.facility.authAppId}}</h5>
+  <h5>Band: {{ctrl.facility.band}}</h5>
+  <h5>City: {{ctrl.facility.communityCity}}</h5>
+  <h5>State: {{ctrl.facility.state}}</h5>
+  <h5>Frequency: {{ctrl.facility.frequency}}</h5>
+  <h5>License Expiration Date: {{ctrl.facility.licenseExpirationDate}}</h5>
+  <h5>Network Affiliation: {{ctrl.facility.networkAfil}}</h5>
+  <h5>Nielson DMA: {{ctrl.facility.nielsonDma}}</h5>
+  <h5>RF Channel: {{ctrl.facility.rfChannel}}</h5>
+  <h5>Service: {{ctrl.facility.service}}</h5>
+  <h5>Status: {{ctrl.facility.status}}</h5>
+  <h5>Status Date: {{ctrl.facility.statusDate}}</h5>
+  <h5>Owner / Party Details:
+    <br>
+    {{ctrl.facility.partyName}}
+    <br>
+    Phone: {{ctrl.facility.partyPhone}}
+    <br>
+    <br>
+    {{ctrl.facility.partyAddress1}}
+    <br>
+      {{ctrl.facility.partyAddress2}}
+    <br>
+      {{ctrl.facility.partyCity}},
+      {{ctrl.facility.partyState}}
+      {{ctrl.facility.partyZip1}}
+      <br>
+      </h5>
+</div>

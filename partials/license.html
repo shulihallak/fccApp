@@ -1,0 +1,54 @@
+<div class="container" ng-controller='licenseCtrl as ctrl'>
+  <!-- <h5>Search by Common Name</h5>
+  <div ng-controller="CommonNameCtrl as ctrl">
+    <input type="text" ng-model="ctrl.name" placeholder="enter name"/>
+    <button ng-click="ctrl.getCommonName()">Get Names</button>
+  </div>
+  <p>
+    {{ctrl.data}}
+  </p> -->
+  <h5>Get All Common License Names</h5>
+  <button ng-click="ctrl.getLicenses()">Get Licenses</button>
+
+  <graph data="graphData">
+    <x field="statDesc"></x>
+    <y field="statCount" type="Percent"></y>
+    <bar field="Name" value="statDesc"></bar>
+  </graph>
+
+  <table class="u-full-width">
+    <thead>
+      <tr>
+        <td>
+          Name
+          <!-- <span ng-show="sortType == 'name' && sortReverse = !sortReverse" class="fa fa-caret-down"></span>
+          <span ng-show="sortType == 'name' && sortReverse" class="fa fa-caret-up"></span> -->
+        </td>
+        <td>
+          <!-- <a href="#" ng-click="sortType = 'license'; sortReverse = !sortReverse">
+          <span ng-show="sortyType == 'license' && sortReverse = !sortReverse" class="fa fa-caret-down"></span>
+          <span ng-show="sortType == 'license' && sortReverse" class="fa fa-caret-up"></span> -->
+
+          License Count
+        </a>
+
+      </td>
+    </tr>
+  </thead>
+  <tbody>
+    Search: <input ng-model="query">
+    Sort by:
+    <select ng-model="orderByField">
+      <option selected value="statCount">License Count</option>
+      <option value="statDesc">Name</option>
+    </select>
+    <tr ng-repeat="stat in ctrl.Stats | orderBy: orderByField | filter:query">
+      <td>
+        <a href="#/license/{{stat.statDesc}}">{{stat.statDesc}}</a>
+      </td>
+      <td>
+        {{stat.statCount | number }}
+      </td>
+    </tr>
+  </tbody>
+</table>

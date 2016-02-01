@@ -1,0 +1,22 @@
+
+<div class="container" ng-controller='rangeCtrl as ctrl'>
+  <h5>FCC spectrum data: Search by band range</h5>
+  <label for="lower">Lower Band</label>
+  <input id="lower" type="text" ng-model="ctrl.lower" placeholder="min 225 max 3700"/>
+  <label for="upper">Upper Band</label>
+  <input id="upper" type="text" ng-model="ctrl.upper" placeholder="min 225 max 3700"/>
+
+  <button ng-click="ctrl.getSpec()">Get Data</button>
+
+  <br>
+
+  <ul>
+    <li ng-repeat="band in ctrl.SpectrumBands">
+      <!-- Id: {{band.id}}<br> -->
+      lowerband: {{band.lowerBand}} MHz<br>
+      upperband: {{band.upperBand}} MHz<br>
+      Description: {{band.bandDesc}}<br>
+      <hr>
+    </li>
+  </ul>
+</div>

@@ -1,0 +1,37 @@
+<div class="container" ng-controller="facilitiesCtrl as ctrl">
+  <h4>FCC Facility Search By State</h4>
+  <div ng-hide='ctrl.box'><p>(Please wait for remote data to load)</p></div>
+
+  <label for="term">Search by state</label>
+  <input id="term" type="text"
+                   ng-model="ctrl.type"
+                   placeholder="eg: NY">
+  <button ng-click="ctrl.getFacility()"> Get Data</button>
+
+  <br>
+
+  <br>
+  <div ng-show="ctrl.box">
+    Filter results: <input ng-model="query">
+  </div>
+
+  <ul>
+
+      <li ng-repeat="state in ctrl.allStates | filter:query ">
+
+        id: {{state.id}} <br>
+        Band: {{state.band}} <br>
+        Call Sign: {{state.callSign}} <br>
+        City: {{state.communityCity}} <br>
+        State: {{state.communityState}} <br>
+        Facility Type: {{state.facilityType}} <br>
+        Frequency: {{state.frequency}} <br>
+        License Exp: {{state.licenseExpirationDate}} <br>
+        Service: {{state.service}} <br>
+        rfChannel: {{state.rfChannel}} <br>
+        Status: {{state.status}} <br>
+        <a href="#/facilities/{{state.id}}" target="_blank">Details for this facility</a>
+        <hr>
+      </li>
+  </ul>
+</div>

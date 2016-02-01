@@ -1,0 +1,73 @@
+<div class="container" ng-controller="licDescCtrl as ctrl">
+  <h5>License Details <div ng-hide='ctrl.box'><p>(Please wait for remote data to load)</p></div> </h5>
+
+<div ng-show="ctrl.box">
+  Filter results: <input ng-model="query">
+</div>
+
+  <table class="u-full-width">
+    <thead>
+      <tr>
+        <td>
+          License Name
+        </td>
+        <td>
+          Call Sign
+        </td>
+        <td>
+          License Detail URL
+        </td>
+        <td>
+          Category Description
+        </td>
+        <td>
+          Expiration Date
+        </td>
+        <td>
+          frn
+        </td>
+        <td>
+          License ID
+        </td>
+        <td>
+          Service Description
+        </td>
+        <td>
+          Status
+        </td>
+      </tr>
+    </thead>
+    <tbody>
+      <tr ng-repeat="license in ctrl.license | filter:query">
+        <td>
+          {{license.licName}}
+        </td>
+        <td>
+          {{license.callsign}}
+        </td>
+        <td>
+          <a href="{{license.licDetailURL}}" target="_blank">Get details</a>
+        </td>
+        <td>
+          {{license.categoryDesc}}
+        </td>
+        <td>
+          {{license.expiredDate}}
+        </td>
+        <td>
+          {{license.frn}}
+        </td>
+        <td>
+          {{license.licenseID}}
+        </td>
+        <td>
+          {{license.serviceDesc}}
+        </td>
+        <td>
+          {{license.statusDesc}}
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+</div>

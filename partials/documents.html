@@ -1,0 +1,32 @@
+<div class="container" ng-controller='documentsCtrl as ctrl'>
+  <h3>FCC Documents: search the database </h3>
+  <h5>Search by any word or term</h5>
+  <label for="search">Search Parameter</label>
+  <input id="search" type="text"
+  ng-model="ctrl.search"
+  placeholder=" eg: 'broadband' or 'spectrum policy'">
+  <button ng-click="ctrl.getDocument()"> Search </button>
+  <br>
+
+  <ul>
+    Total number of results: {{ctrl.count}}
+<div ng-hide='ctrl.box'><p>(Please wait for remote data to load)</p></div> 
+    <div ng-show="ctrl.box">
+      Filter
+       results: <input ng-model="query">
+    </div>
+    <li ng-repeat="result in ctrl.data | filter:query">
+
+      <a href="{{result.webUrl}}" target="_blank">{{result.title}}</a>
+      <hr>
+    </li>
+  </ul>
+
+  <br>
+  Page: {{ctrl.main.page + 1}} of {{ctrl.pages}}
+  <br>
+  <br>
+  <button class="page" ng-click="ctrl.previousPage()">previous page</button>
+  <button class="page" ng-click="ctrl.nextPage()">next page</button>
+
+</div>

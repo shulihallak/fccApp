@@ -20,17 +20,18 @@
 //     population: 603502
 //   }
 // };
-//
+
 // function initMap() {
 //   // Create the map.
 //   var map = new google.maps.Map(document.getElementById('map'), {
-//     zoom: 4,
+//     zoom: 4.5,
 //     center: {lat: 37.090, lng: -95.712},
 //     mapTypeId: google.maps.MapTypeId.TERRAIN
-//   });
 //
-//   // Construct the circle for each value in citymap.
-//   // Note: We scale the area of the circle based on the population.
+//   });
+
+  // Construct the circle for each value in citymap.
+  // Note: We scale the area of the circle based on the population.
 //   for (var city in citymap) {
 //     // Add the circle for this city to the map.
 //     var cityCircle = new google.maps.Circle({
@@ -45,21 +46,22 @@
 //     });
 //   }
 // }
-
-
-      var citymap = {
-        city: {
-          center: {lat: 40.7127837, lng: -74.00594130000002},
-          wirelessDown: 32478.8
-        }
-      };
+//
+//
+//       var citymap = {
+//         city: {
+//           center: {lat: 40.7127837, lng: -74.00594130000002},
+//           wirelessDown: 32478.8
+//         }
+//       };
 
 
 function initMap() {
   var map = new google.maps.Map(document.getElementById('map'), {
     zoom: 4,
     center: {lat: 37.090, lng: -95.712},
-    mapTypeId: google.maps.MapTypeId.TERRAIN
+    mapTypeId: google.maps.MapTypeId.TERRAIN,
+        styles: [{"featureType":"landscape","stylers":[{"saturation":-100},{"lightness":65},{"visibility":"on"}]},{"featureType":"poi","stylers":[{"saturation":-100},{"lightness":51},{"visibility":"simplified"}]},{"featureType":"road.highway","stylers":[{"saturation":-100},{"visibility":"simplified"}]},{"featureType":"road.arterial","stylers":[{"saturation":-100},{"lightness":30},{"visibility":"on"}]},{"featureType":"road.local","stylers":[{"saturation":-100},{"lightness":40},{"visibility":"on"}]},{"featureType":"transit","stylers":[{"saturation":-100},{"visibility":"simplified"}]},{"featureType":"administrative.province","stylers":[{"visibility":"off"}]},{"featureType":"water","elementType":"labels","stylers":[{"visibility":"on"},{"lightness":-25},{"saturation":-100}]},{"featureType":"water","elementType":"geometry","stylers":[{"hue":"#ffff00"},{"lightness":-25},{"saturation":-97}]}]
     // zoomControl: true,
     // zoomControlOptions: {
     //   style: google.maps.ZoomControlStyle.LARGE,
@@ -74,12 +76,13 @@ function initMap() {
   });
 }
 
-function geocodeAddress(geocoder, resultsMap) {
+function geocodeAddress(geocoder, resultsMap, draw) {
   var that = this;
   var address = document.getElementById('address').value;
   geocoder.geocode({'address': address}, function(results, status) {
     if (status === google.maps.GeocoderStatus.OK) {
       resultsMap.setCenter(results[0].geometry.location);
+      resultsMap.setZoom(13);
       console.log(results[0].geometry.location.lat());
       console.log(results[0].geometry.location.lng());
 
@@ -99,46 +102,70 @@ function geocodeAddress(geocoder, resultsMap) {
       var ctrl = this;
       $.getJSON(url, function(data){
         console.log(data);
-        ctrl.wirelessDown = (data.SpeedTestCounty.wirelessAvgDownload)*0.001;
-        ctrl.wirelessUp = (data.SpeedTestCounty.wirelessAvgUpload)*0.001;
-        ctrl.wirelessMaxDown =
-        (data.SpeedTestCounty.wirelessMaxDownload)*0.001;
-        ctrl.wirelessMaxUp =
-        (data.SpeedTestCounty.wirelessMaxUpload)*0.001;
-        ctrl.wirelessTests =
-        (data.SpeedTestCounty.wirelessTests)*0.001;
-        ctrl.AvgDown =
-        (data.SpeedTestCounty.wirelineAvgDownload)*0.001;
-        ctrl.AvgUp =
-        (data.SpeedTestCounty.wirelineAvgUpload)*0.001;
-        ctrl.maxDown =
-        (data.SpeedTestCounty.wirelineMaxDownload)*0.001;
-        ctrl.maxUp =
-        (data.SpeedTestCounty.wirelineMaxUpload)*0.001;
-        ctrl.tests =
-        (data.SpeedTestCounty.wirelineTests)*0.001;
+        ctrl.data = data;
+
+        // ctrl.wirelessDown = (data.SpeedTestCounty.wirelessAvgDownload)*0.001;
+        // ctrl.wirelessUp = (data.SpeedTestCounty.wirelessAvgUpload)*0.001;
+        // ctrl.wirelessMaxDown =
+        // (data.SpeedTestCounty.wirelessMaxDownload)*0.001;
+        // ctrl.wirelessMaxUp =
+        // (data.SpeedTestCounty.wirelessMaxUpload)*0.001;
+        // ctrl.wirelessTests =
+        // (data.SpeedTestCounty.wirelessTests)*0.001;
+        // ctrl.AvgDown =
+        // (data.SpeedTestCounty.wirelineAvgDownload)*0.001;
+        // ctrl.AvgUp =
+        // (data.SpeedTestCounty.wirelineAvgUpload)*0.001;
+        // ctrl.maxDown =
+        // (data.SpeedTestCounty.wirelineMaxDownload)*0.001;
+        // ctrl.maxUp =
+        // (data.SpeedTestCounty.wirelineMaxUpload)*0.001;
+        // ctrl.tests =
+        // (data.SpeedTestCounty.wirelineTests)*0.001;
 
         console.log(ctrl.wirelessDown);
+
+        function draw (url, fccData){
+          var svg = dimple.newSvg("#chart", 600, 500);
+          // var url =  'http://data.fcc.gov/api/speedtest/find?format=json&latitude=' + lat +'&longitude=' +lng;
+          // var ctrl = this;
+                
+
+                d3.json(url, function(error, data){
+
+                  if (error) {
+                    console.log(error);
+                  }
+                  var myChart = new dimple.chart(svg, data);
+                  myChart.setBounds(60, 30, 510, 305);
+                  myChart.addCategoryAxis("x", "SpeedTestCounty")
+                  myChart.addCategoryAxis('y', "Speeds");
+
+
+                  myChart.addSeries(null, dimple.plot.bar);
+                  myChart.draw();
+                });
+        }
 
       });
 
     var marker = new google.maps.Marker({
       map: resultsMap,
-      position: results[0].geometry.location,
-
+      position: results[0].geometry.location
     });
-    for (var city in citymap) {
-      var dataCircle = new google.maps.Circle({
-        strokeColor: '#FF0000',
-              strokeOpacity: 0.8,
-              strokeWeight: 2,
-              fillColor: '#FF0000',
-              fillOpacity: 0.35,
-              map: map,
-              center: citymap[city].center,
-              radius: Math.sqrt(citymap[city].wirelessDown) * 100
-      });
-    }
+
+    // for (var city in citymap) {
+    //   var dataCircle = new google.maps.Circle({
+    //     strokeColor: '#FF0000',
+    //           strokeOpacity: 0.8,
+    //           strokeWeight: 2,
+    //           fillColor: '#FF0000',
+    //           fillOpacity: 0.35,
+    //           map: map,
+    //           center: citymap[city].center,
+    //           radius: Math.sqrt(citymap[city].wirelessDown) * 100
+    //   });
+    // }
 
     } else {
       alert('Geocode was not successful for the following reason: ' + status);

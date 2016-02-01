@@ -5,22 +5,27 @@
   <title>FCC Broadband Map</title>
 
   <link rel="stylesheet" href="stylesheet/map.css" media="screen" title="no title" charset="utf-8">
-
+  <!-- google map stuff -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
   <script src="https://maps.googleapis.com/maps/api/js?key=&signed_in=true&callback=initMap"
-      async defer></script>
-    <script type="text/javascript" src="js/map.js">
-    </script>
+  async defer></script>
+  <!-- D3 & Dimple -->
+  <script src="http://d3js.org/d3.v3.min.js"></script>
+  <script src="http://dimplejs.org/dist/dimple.v2.0.0.min.js"></script>
+  
+  <script type="text/javascript" src="js/map.js">
+  </script>
 </head>
 <body>
 
   <div id="floating-panel">
-   <input id="address" type="textbox" value="">
-   <input id="submit" type="button" value="Geocode">
- </div>
-     <div id="map"></div>
+    <input id="address" type="textbox" value="">
+    <input id="submit" type="button" value="Geocode">
+  </div>
+  <div id="map"></div>
 
+  <div id="chart"></div>
 
 </body>
 </html>
