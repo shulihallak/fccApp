@@ -9,12 +9,14 @@
   </p> -->
   <h5>Get All Common License Names</h5>
   <button ng-click="ctrl.getLicenses()">Get Licenses</button>
-
-  <graph data="graphData">
-    <x field="statDesc"></x>
-    <y field="statCount" type="Percent"></y>
-    <bar field="Name" value="statDesc"></bar>
+<div ng-show="ctrl.box">
+  <graph data="graphData" width="100%" height="300px">
+    <x field="statDesc" group-by="statDesc"></x>
+    <y field="statCount" type="Measure"></y>
+    <bar field="Name"></bar>
   </graph>
+</div>
+
 
   <table class="u-full-width">
     <thead>
@@ -36,12 +38,15 @@
     </tr>
   </thead>
   <tbody>
-    Search: <input ng-model="query">
-    Sort by:
-    <select ng-model="orderByField">
-      <option selected value="statCount">License Count</option>
-      <option value="statDesc">Name</option>
-    </select>
+    <div ng-show="ctrl.box">
+      Search: <input ng-model="query">
+      Sort by:
+      <select ng-model="orderByField">
+        <option selected value="statCount">License Count</option>
+        <option value="statDesc">Name</option>
+      </select>
+    </div>
+
     <tr ng-repeat="stat in ctrl.Stats | orderBy: orderByField | filter:query">
       <td>
         <a href="#/license/{{stat.statDesc}}">{{stat.statDesc}}</a>

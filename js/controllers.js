@@ -27,7 +27,7 @@ function ($http){
 ///////////////////////////////////////
 //Get all license info
 ///////////////////////////////////////
-fccappControllers.controller('licenseCtrl', ['$http', 'dataService', function($http, dataService){
+fccappControllers.controller('licenseCtrl', ['$scope','$http', function($scope, $http){
   var ctrl = this;
   this.getLicenses = function(){
     $http.get('http://data.fcc.gov/api/license-view/licenses/getCommonNames?&format=json')
@@ -35,21 +35,25 @@ fccappControllers.controller('licenseCtrl', ['$http', 'dataService', function($h
       function(data){
         ctrl.Stats = data.Stats.Stat;
         console.log(data);
+        ctrl.box = true;
+        $scope.graphData = data.Stats.Stat;
       }
     );
   };
-  dataService.getData().then(function(res){
-    ctrl.graphData = res.data;
-  });
+
+  // dataService.getData().then(function(res){
+  //   ctrl.graphData = res.data.Stats.Stat;
+  //   console.log(ctrl.graphData);
+  // });
 }]);
 
-fccappControllers.service('dataService', ['$http', function($http){
-  return {
-    getData: function(){
-      return   $http.get('http://data.fcc.gov/api/license-view/licenses/getCommonNames?&format=json');
-    }
-  };
-}]);
+// fccappControllers.service('dataService', ['$http', function($http){
+//   return {
+//     getData: function(data){
+//       return   $http.get('http://data.fcc.gov/api/license-view/licenses/getCommonNames?&format=json');
+//     }
+//   };
+// }]);
 
 fccappControllers.controller('licDescCtrl', ['$http', '$routeParams', function($http, $routeParams){
   var ctrl = this;
