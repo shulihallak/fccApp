@@ -1,3 +1,37 @@
-<br>
+<div class="container" ng-controller="providersCtrl as ctrl">
+  <h4>FCC Speed Test For: {{ctrl.city}}</h4>
+  <div ng-hide='ctrl.box'><p>(Please wait for remote data to load)</p></div>
 
-<button ng-click="ctrl.getProviders()">Get Providers</button>
+  <label for="term">Search by zipcode</label>
+  <input id="term" type="text"
+                   ng-model="ctrl.zip"
+                   placeholder="eg: 10012">
+  <button ng-click="ctrl.getLatLong()"> Get Speeds</button>
+  <div ng-show=ctrl.box> <button ng-click=ctrl.clear()>Clear Chart</button></div>
+  <br>
+
+
+  <div ng-show="ctrl.box">
+    <graph data="graphData" width="100%" height="500px">
+      <x field="type" title="wireline or wireless"></x>
+      <y field="speed" type="Measure" title="Mbps"></y>
+      <bar field="type"></bar>
+    </graph>
+  </div>
+
+<div ng-show="ctrl.box">
+    <hr>
+  Wireline Max Download: {{ctrl.speeds.wirelineMaxDownload / 10000 | number:2}} Mbps <br>
+  Wireline Max Upload: {{ctrl.speeds.wirelineMaxUpload / 10000 | number:2}} Mbps <br>
+  Wireline Average Download: {{ctrl.speeds.wirelineAvgDownload / 10000 | number:2}} Mbps <br>
+  Wireline Average Upload: {{ctrl.speeds.wirelineAvgUpload / 10000 | number:2}} Mbps <br>
+  Wireline Test: {{ctrl.speeds.wirelineTests / 10000 | number:2}} Mbps <br>
+  <hr>
+  Wireless Max Download: {{ctrl.speeds.wirelessMaxDownload / 10000 | number:2}} Mbps <br>
+  Wireless Max Upload: {{ctrl.speeds.wirelessMaxUpload / 10000 | number:2}} Mbps <br>
+  Wireless Average Download: {{ctrl.speeds.wirelessAvgDownload / 10000 | number:2}} Mbps <br>
+  Wireless Average Upload: {{ctrl.speeds.wirelessAvgUpload / 10000 | number:2}} Mbps <br>
+  Wireless Tests: {{ctrl.speeds.wirelessTests / 10000 | number:2}} Mbps <br>
+</div>
+
+</div>

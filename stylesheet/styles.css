@@ -5,6 +5,7 @@
   box-sizing: border-box;
 }
 
+
 html, body {
   height: 100%;
   margin: 0;
@@ -72,7 +73,7 @@ input[type="button"] {
     textarea {
       overflow: auto;
     }
-    
+
     input[type="email"],
     input[type="number"],
     input[type="search"],

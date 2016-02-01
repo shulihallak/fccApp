@@ -9,6 +9,7 @@
   </p> -->
   <h5>Get All Common License Names</h5>
   <button ng-click="ctrl.getLicenses()">Get Licenses</button>
+  <div ng-hide='ctrl.box'><p>After clicking, please wait for remote data to load</p></div>
 <div ng-show="ctrl.box">
   <graph data="graphData" width="100%" height="300px">
     <x field="statDesc" group-by="statDesc"></x>

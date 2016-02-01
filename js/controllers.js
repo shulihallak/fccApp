@@ -17,6 +17,9 @@ function ($http){
       function(data) {
         ctrl.SpectrumBands = data.SpectrumBands.SpectrumBand;
         console.log(data);
+        ctrl.box = true;
+        $scope.graphData = data.SpectrumBands.SpectrumBand;
+        console.log($scope.graphData);
       },
       function (error) {
         console.log(error);
@@ -37,6 +40,7 @@ fccappControllers.controller('licenseCtrl', ['$scope','$http', function($scope, 
         console.log(data);
         ctrl.box = true;
         $scope.graphData = data.Stats.Stat;
+        console.log($scope.graphData);
       }
     );
   };
@@ -184,18 +188,50 @@ fccappControllers.controller('facDetailCtrl', ['$http', '$routeParams', function
 ////////////////////////////////////////////////////
 // broadband api //
 ///////////////////////////////////////
-fccappControllers.controller('providersCtrl', ['$http',
-function($http){
+fccappControllers.controller('providersCtrl', ['$scope','$http',
+function($scope, $http){
   var ctrl = this;
-  ctrl.getProviders = function(){
-    $http.get('http://www.broadbandmap.gov/broadbandmap/provider?format=json')
+  this.getLatLong = function(){
+    $http.get('https://www.zipcodeapi.com/rest/GSX0sQhUA4BL0Z9oEj2mUOi3cdDsBzphsmiUdzPNEqzEpJ3325pXUH16VEyweYOG/info.json/'+ this.zip + '/degrees')
     .success(function(data){
       console.log(data);
+      ctrl.lat = data.lat;
+      ctrl.lng = data.lng;
+      ctrl.city = data.city;
+      ctrl.box = true;
+      ctrl.getSpeeds();
+
     });
-  }
+  };
+  this.getSpeeds = function(){
+    $http.get('http://data.fcc.gov/api/speedtest/find?latitude='+ ctrl.lat +'&longitude=' + ctrl.lng + '&format=json')
+    .success(function(data){
+      console.log(data);
+      ctrl.speeds = data.SpeedTestCounty;
+      console.log(ctrl.speeds);
+      var dataArray = [];
+      for (var i in ctrl.speeds){
+        dataArray.push({"type": i, "speed": (ctrl.speeds[i]/10000)+' mbps'});
+      }
+      console.log(dataArray);
+      $scope.graphData = dataArray;
+    });
+  };
+  this.clear = function() {
+    location.reload();
+  };
 }
 ]);
 
+/*
+[
+{
+"type": "wireline",
+"speed" : '200mbs',
+
+}
+]
+*/
 
 ////////////////////////////////////////////////////
 // broadband map //

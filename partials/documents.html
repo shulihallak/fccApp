@@ -10,7 +10,7 @@
 
   <ul>
     Total number of results: {{ctrl.count}}
-<div ng-hide='ctrl.box'><p>(Please wait for remote data to load)</p></div> 
+<div ng-hide='ctrl.box'><p>(Please wait for remote data to load)</p></div>
     <div ng-show="ctrl.box">
       Filter
        results: <input ng-model="query">
@@ -22,11 +22,12 @@
     </li>
   </ul>
 
+<div ng-show="ctrl.box">
   <br>
   Page: {{ctrl.main.page + 1}} of {{ctrl.pages}}
   <br>
   <br>
   <button class="page" ng-click="ctrl.previousPage()">previous page</button>
   <button class="page" ng-click="ctrl.nextPage()">next page</button>
-
+</div>
 </div>
