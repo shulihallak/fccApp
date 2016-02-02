@@ -4,7 +4,8 @@
 var fccApp = angular.module('fccApp', [
   'ngRoute',
   'fccappControllers',
-  'angular-dimple'
+  'angular-dimple',
+
 ]);
 
 fccApp.config(['$routeProvider',

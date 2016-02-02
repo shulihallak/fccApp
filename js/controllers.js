@@ -10,7 +10,6 @@ var fccappControllers = angular.module('fccappControllers', []);
 fccappControllers.controller('rangeCtrl', ['$http',
 function ($http){
   var ctrl = this;
-
   this.getSpec = function () {
 
     $http.get('http://data.fcc.gov/api/spectrum-view/services/advancedSearch/getSpectrumBands?&format=json&frequencyFrom=' + this.lower + '&frequencyTo=' + this.upper ).success(
@@ -32,23 +31,16 @@ function ($http){
 ///////////////////////////////////////
 fccappControllers.controller('licenseCtrl', ['$scope','$http', function($scope, $http){
   var ctrl = this;
-  this.getLicenses = function(){
     $http.get('http://data.fcc.gov/api/license-view/licenses/getCommonNames?&format=json')
     .success(
       function(data){
-        ctrl.Stats = data.Stats.Stat;
+        // ctrl.Stats = data.Stats.Stat;
         console.log(data);
         ctrl.box = true;
         $scope.graphData = data.Stats.Stat;
         console.log($scope.graphData);
       }
     );
-  };
-
-  // dataService.getData().then(function(res){
-  //   ctrl.graphData = res.data.Stats.Stat;
-  //   console.log(ctrl.graphData);
-  // });
 }]);
 
 // fccappControllers.service('dataService', ['$http', function($http){
@@ -63,7 +55,6 @@ fccappControllers.controller('licDescCtrl', ['$http', '$routeParams', function($
   var ctrl = this;
   ctrl.licDesc = $routeParams.licDesc;
 var url = 'http://data.fcc.gov/api/license-view/basicSearch/getLicenses?searchValue=' + $routeParams.licDesc + '&format=json';
-
   $http.get(url)
   .success(function(data){
     console.log(data);
