@@ -7,23 +7,32 @@ var fccappControllers = angular.module('fccappControllers', []);
 ///////////////////////////////////////
 // spectrumbands
 ///////////////////////////////////////
-fccappControllers.controller('rangeCtrl', ['$http',
-function ($http){
+fccappControllers.controller('rangeCtrl', ['$scope','$http',
+function ($scope, $http){
   var ctrl = this;
-  this.getSpec = function () {
 
-    $http.get('http://data.fcc.gov/api/spectrum-view/services/advancedSearch/getSpectrumBands?&format=json&frequencyFrom=' + this.lower + '&frequencyTo=' + this.upper ).success(
-      function(data) {
-        ctrl.SpectrumBands = data.SpectrumBands.SpectrumBand;
-        console.log(data);
-        ctrl.box = true;
-        $scope.graphData = data.SpectrumBands.SpectrumBand;
-        console.log($scope.graphData);
-      },
-      function (error) {
-        console.log(error);
-      }
-    );
+  this.getSpec = function () {
+    $http({
+      method: 'JSONP',
+      url: 'http://data.fcc.gov/api/spectrum-view/services/advancedSearch/getSpectrumBands?&frequencyFrom=' + this.lower + '&frequencyTo=' + this.upper +'&format=jsonp&jsonCallback'
+    })
+    .success(function(data){
+      ctrl.SpectrumBands = data.SpectrumBands.SpectrumBand;
+      console.log(data);
+      ctrl.box = true;
+    });
+    // $http.get('http://data.fcc.gov/api/spectrum-view/services/advancedSearch/getSpectrumBands?&format=json&frequencyFrom=' + this.lower + '&frequencyTo=' + this.upper ).success(
+    //   function(data) {
+    //     ctrl.SpectrumBands = data.SpectrumBands.SpectrumBand;
+    //     console.log(data);
+    //     ctrl.box = true;
+    //     $scope.graphData = data.SpectrumBands.SpectrumBand;
+    //     console.log($scope.graphData);
+    //   },
+    //   function (error) {
+    //     console.log(error);
+    //   }
+    // );
   };
 }]);
 ///////////////////////////////////////
@@ -31,16 +40,16 @@ function ($http){
 ///////////////////////////////////////
 fccappControllers.controller('licenseCtrl', ['$scope','$http', function($scope, $http){
   var ctrl = this;
-    $http.get('http://data.fcc.gov/api/license-view/licenses/getCommonNames?&format=json')
-    .success(
-      function(data){
-        // ctrl.Stats = data.Stats.Stat;
-        console.log(data);
-        ctrl.box = true;
-        $scope.graphData = data.Stats.Stat;
-        console.log($scope.graphData);
-      }
-    );
+  var url = 'http://www.data.fcc.gov/api/license-view/licenses/getCommonNames?&format=jsonp&jsonCallback=JSON_CALLBACK';
+  $http({
+    method: 'JSONP',
+    url: url
+  })
+  .success(function(data){
+    console.log(data);
+    ctrl.Stats = data.Stats.Stat;
+    ctrl.box = true;
+  });
 }]);
 
 // fccappControllers.service('dataService', ['$http', function($http){
@@ -54,15 +63,27 @@ fccappControllers.controller('licenseCtrl', ['$scope','$http', function($scope, 
 fccappControllers.controller('licDescCtrl', ['$http', '$routeParams', function($http, $routeParams){
   var ctrl = this;
   ctrl.licDesc = $routeParams.licDesc;
-var url = 'http://data.fcc.gov/api/license-view/basicSearch/getLicenses?searchValue=' + $routeParams.licDesc + '&format=json';
-  $http.get(url)
-  .success(function(data){
-    console.log(data);
-    ctrl.data = data;
+  var ex = 'http://data.fcc.gov/api/license-view/basicSearch/getLicenses?searchValue=Verizon%20Wireless&format=jsonp&jsonCallback=JSON_CALLBACK'
+  // http://data.fcc.gov/api/license-view/basicSearch/getLicenses?searchValue=Sprint Nextel&format=json&jsonCallback=JSON_CALLBACK
+var url = 'http://data.fcc.gov/api/license-view/basicSearch/getLicenses?searchValue=' + $routeParams.licDesc + '&format=json&jsonCallback=JSON_CALLBACK';
+$http({
+  method: 'JSONP',
+  url: url
+})
+.success(function(data){
+  console.log(data);
+  console.log(url);
     ctrl.license = data.Licenses.License;
-    console.log(ctrl.license);
-    ctrl.box = true;
-  });
+  ctrl.box = true;
+});
+  // $http.get(url)
+  // .success(function(data){
+  //   console.log(data);
+  //   ctrl.data = data;
+  //   ctrl.license = data.Licenses.License;
+  //   console.log(ctrl.license);
+  //   ctrl.box = true;
+  // });
 }]);
 ///////////////////////////////////////
 // Get info by common carrier
