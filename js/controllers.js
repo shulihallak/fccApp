@@ -14,11 +14,12 @@ function ($scope, $http){
   this.getSpec = function () {
     $http({
       method: 'JSONP',
-      url: 'http://data.fcc.gov/api/spectrum-view/services/advancedSearch/getSpectrumBands?&frequencyFrom=' + this.lower + '&frequencyTo=' + this.upper +'&format=jsonp&jsonCallback'
+      url: 'http://data.fcc.gov/api/spectrum-view/services/advancedSearch/getSpectrumBands?&frequencyFrom=' + this.lower + '&frequencyTo=' + this.upper +'&format=jsonp&callback=JSON_CALLBACK'
     })
     .success(function(data){
       ctrl.SpectrumBands = data.SpectrumBands.SpectrumBand;
       console.log(data);
+      console.log(ctrl.SpectrumBands);
       ctrl.box = true;
     });
     // $http.get('http://data.fcc.gov/api/spectrum-view/services/advancedSearch/getSpectrumBands?&format=json&frequencyFrom=' + this.lower + '&frequencyTo=' + this.upper ).success(
@@ -52,20 +53,14 @@ fccappControllers.controller('licenseCtrl', ['$scope','$http', function($scope, 
   });
 }]);
 
-// fccappControllers.service('dataService', ['$http', function($http){
-//   return {
-//     getData: function(data){
-//       return   $http.get('http://data.fcc.gov/api/license-view/licenses/getCommonNames?&format=json');
-//     }
-//   };
-// }]);
+
 
 fccappControllers.controller('licDescCtrl', ['$http', '$routeParams', function($http, $routeParams){
   var ctrl = this;
   ctrl.licDesc = $routeParams.licDesc;
   var ex = 'http://data.fcc.gov/api/license-view/basicSearch/getLicenses?searchValue=Verizon%20Wireless&format=jsonp&jsonCallback=JSON_CALLBACK'
   // http://data.fcc.gov/api/license-view/basicSearch/getLicenses?searchValue=Sprint Nextel&format=json&jsonCallback=JSON_CALLBACK
-var url = 'http://data.fcc.gov/api/license-view/basicSearch/getLicenses?searchValue=' + $routeParams.licDesc + '&format=json&jsonCallback=JSON_CALLBACK';
+var url = 'http://data.fcc.gov/api/license-view/basicSearch/getLicenses?searchValue=' + $routeParams.licDesc + '&format=jsonp&jsonCallback=JSON_CALLBACK';
 $http({
   method: 'JSONP',
   url: url
@@ -113,6 +108,8 @@ fccappControllers.controller('CommonNameCtrl', ['$http', function($http){
 //FCC content controller //
 ///////////////////////////////////////
 fccappControllers.controller('documentsCtrl', ['$http', function($http){
+var url = 'http://fcc.gov/api/content.jsonp';
+// 'http://fcc.gov/api/content.jsonp&jsonCallback?search_string=' + this.search + '&limit=10&page=' + ctrl.main.page
   var ctrl = this;
   ctrl.main = {
     page: 0,
@@ -120,10 +117,11 @@ fccappControllers.controller('documentsCtrl', ['$http', function($http){
   };
   //search results based user input terms
   this.getDocument = function(){
-    $http.get('http://fcc.gov/api/content.json?search_string=' + this.search + '&limit=10&page=' + ctrl.main.page)
+    $http.get(url)
     .success(function(data){
       ctrl.data = data;
       console.log(data);
+      console.log(url);
 
       ctrl.pages = data[0].pages;
       ctrl.count = data[0].count;
@@ -135,16 +133,16 @@ fccappControllers.controller('documentsCtrl', ['$http', function($http){
           ctrl.main.page++;
           ctrl.getDocument();
         }
-      }
+      };
       // previous page of search results
       ctrl.previousPage = function(){
         if (ctrl.main.page > 0){
           ctrl.main.page--;
           ctrl.getDocument();
         }
-      }
-    })
-  }
+      };
+    });
+  };
   // search by fcc terms
   this.getTerms = function(){
     var ctrl = this;
