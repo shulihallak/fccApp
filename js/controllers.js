@@ -40,6 +40,9 @@ function ($scope, $http){
 //Get all license info
 ///////////////////////////////////////
 fccappControllers.controller('licenseCtrl', ['$scope','$http', function($scope, $http){
+  this.desc = false;
+  this.loader1 = true;
+  this.loader2 = false;
   var ctrl = this;
   var url = 'http://www.data.fcc.gov/api/license-view/licenses/getCommonNames?&format=jsonp&jsonCallback=JSON_CALLBACK';
   $http({
@@ -49,14 +52,40 @@ fccappControllers.controller('licenseCtrl', ['$scope','$http', function($scope, 
   .success(function(data){
     console.log(data);
     ctrl.Stats = data.Stats.Stat;
+    ctrl.loader1 = false;
     ctrl.box = true;
+    ctrl.desc = false;
+
   });
+
+  $scope.getDescription =  function(statDesc){
+    ctrl.box = false;
+    ctrl.loader2 = true;
+    var url2 = 'http://data.fcc.gov/api/license-view/basicSearch/getLicenses?searchValue=' + statDesc + '&format=jsonp&jsonCallback=JSON_CALLBACK';
+    $http({
+      method: 'JSONP',
+      url: url2
+    })
+    .success(function(results){
+      // alert('hi!');
+      console.log(url2)
+      console.log(results);
+      ctrl.license = results.Licenses.License;
+      ctrl.box = false;
+      ctrl.desc = true;
+      ctrl.loader2 = false;
+      // document.getElementById('dataload').style.visibility = 'hidden';
+    });
+  };
 }]);
 
 
 
 fccappControllers.controller('licDescCtrl', ['$http', '$routeParams', function($http, $routeParams){
   var ctrl = this;
+  this.getDescription =  function(statDesc){
+
+  };
   ctrl.licDesc = $routeParams.licDesc;
   var ex = 'http://data.fcc.gov/api/license-view/basicSearch/getLicenses?searchValue=Verizon%20Wireless&format=jsonp&jsonCallback=JSON_CALLBACK'
   // http://data.fcc.gov/api/license-view/basicSearch/getLicenses?searchValue=Sprint Nextel&format=json&jsonCallback=JSON_CALLBACK
@@ -68,17 +97,17 @@ $http({
 .success(function(data){
   console.log(data);
   console.log(url);
-    ctrl.license = data.Licenses.License;
+  ctrl.license = data.Licenses.License;
   ctrl.box = true;
 });
-  // $http.get(url)
-  // .success(function(data){
-  //   console.log(data);
-  //   ctrl.data = data;
-  //   ctrl.license = data.Licenses.License;
-  //   console.log(ctrl.license);
-  //   ctrl.box = true;
-  // });
+  $http.get(url)
+  .success(function(data){
+    console.log(data);
+    ctrl.data = data;
+    ctrl.license = data.Licenses.License;
+    console.log(ctrl.license);
+    ctrl.box = true;
+  });
 }]);
 ///////////////////////////////////////
 // Get info by common carrier
@@ -108,7 +137,7 @@ fccappControllers.controller('CommonNameCtrl', ['$http', function($http){
 //FCC content controller //
 ///////////////////////////////////////
 fccappControllers.controller('documentsCtrl', ['$http', function($http){
-var url = 'http://fcc.gov/api/content.jsonp';
+var url = 'http://fcc.gov/api/content?&format=jsonp&callback=JSON_CALLBACK';
 // 'http://fcc.gov/api/content.jsonp&jsonCallback?search_string=' + this.search + '&limit=10&page=' + ctrl.main.page
   var ctrl = this;
   ctrl.main = {
@@ -117,7 +146,11 @@ var url = 'http://fcc.gov/api/content.jsonp';
   };
   //search results based user input terms
   this.getDocument = function(){
-    $http.get(url)
+    $http({
+      method: 'JSONP',
+      dataType: 'jsonp',
+      url: url
+    })
     .success(function(data){
       ctrl.data = data;
       console.log(data);
